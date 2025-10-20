@@ -34,11 +34,13 @@ export class UsersController {
     return plainToInstance(UserResponseDto, foundUser, { excludeExtraneousValues: true });
   }
 
+  @Roles('admin')
   @Put(':id')
   update(@Param('id') id: string, @Body() updateDto: UpdateUserDto) {
     return this.userService.update(id, updateDto);
   }
 
+  @Roles('admin')
   @Delete(':id')
   delete(@Param('id') id: string) {
     return this.userService.delete(id);
