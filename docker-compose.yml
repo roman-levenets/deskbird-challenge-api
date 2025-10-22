@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:latest
-    container_name: my-postgres
+    container_name: deskbird-challenge-postgres
     restart: always
     environment:
       POSTGRES_USER: postgres
@@ -15,7 +15,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4:latest
-    container_name: my-pgadmin
+    container_name: deskbird-challenge-pgadmin
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@example.com
